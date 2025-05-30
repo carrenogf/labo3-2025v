@@ -1,0 +1,1 @@
+gcloud compute ssh vm-lgbm-modelo --zone=us-central1-a

@@ -171,6 +171,7 @@ def objective(trial):
     preds = model.predict(X_val)
     mse = mean_squared_error(y_val, preds)  # MSE normal
     rmse = np.sqrt(mse)
+    return rmse
 
 # === 3. Configurar almacenamiento SQLite para Optuna ===
 

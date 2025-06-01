@@ -118,6 +118,7 @@ storage_url = f"sqlite:///{DB_PATH}"
 df = pd.read_csv('../datasets/dt_fe2.csv',sep=',')
 # Optimizar el uso de memoria del DataFrame
 df = optimize_memory_usage(df)
+df["target"] = df["target"].fillna(0)
 
 # === 1. Carga de datos y preprocesamiento ===
 # Asegurate de tener cargado tu DataFrame `df`

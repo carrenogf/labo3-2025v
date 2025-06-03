@@ -1,0 +1,12 @@
+sudo apt update
+sudo apt install python3-full
+sudo apt install python3-pip
+python3 -m venv venv
+source venv/bin/activat
+pip isntall pandas lightgbm scikit-learn optuna matplotlib openpyxl
+sudo apt isntall git
+git clone https://github.com/carrenogf/labo3-2025v.git
+mkdir datasets
+gsutil cat gs://resultados_labo3/dt_fe.csv > /home/labo3francisco/labo3-2025v/FRANCISCO/datasets/dt_fe.csv
+gcloud auth login
+gcloud config set project labo3-461411

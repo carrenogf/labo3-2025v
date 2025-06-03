@@ -7,6 +7,7 @@ from reducirDT import optimize_memory_usage
 import datetime
 import random
 import os
+import gc
 
 DATASET_NAME = "dt_fe"
 
@@ -32,6 +33,19 @@ df = pd.read_csv(DATASET_PATH, sep=',')
 
 # Optimizar el uso de memoria del DataFrame
 df = optimize_memory_usage(df)
+
+df2 = pd.read_csv('../datasets/dt_fe2.csv',sep=',')
+
+df2 = optimize_memory_usage(df2)
+df["proporcion_producto_en_total_mes"] = df2["proporcion_producto_en_total_mes"]
+df["modo_diff"] = df2["modo_diff"]
+df["modo_6m"] = df2["modo_6m"]
+df["std_6m"] = df2["std_6m"]
+
+del df2
+gc.collect()
+
+
 # Codificar categóricas
 print("Codificando categóricas...")
 cat_cols = ['cat1', 'cat2', 'cat3', 'brand', 'plan_precios_cuidados']

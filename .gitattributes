@@ -1,0 +1,8 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.sh text  eol=lf
+FRANCISCO/detallado/AutogluonModels/**/model.pkl filter=lfs diff=lfs merge=lfs -text
+FRANCISCO/clase4/ARIMA.ipynb filter=lfs diff=lfs merge=lfs -text
+FRANCISCO/clase5/AutogluonModels/**/model.safetensors filter=lfs diff=lfs merge=lfs -text
